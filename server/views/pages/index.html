@@ -1,0 +1,61 @@
+{% extends "../partials/layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">  
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Sign In</h1>
+
+    <form method="POST">
+      <div class="govuk-form-group">
+        <label for="username" class="govuk-label">Username</label>
+        <input type="text" name="username" id="username" class="govuk-input text-box" autocomplete="off" autofocus/>
+      </div>
+
+      <div class="govuk-form-group">
+        <label for="password" class="govuk-label">Password</label>
+       
+        <div class="show-password">
+          <input class="govuk-input text-box" id="password" name="password" type="password" autocomplete="current-password" data-element-id="password" aria-describedby="password-error">                          
+        </div>            
+      </div>
+      <div class="govuk-form-group">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="show-password-checkbox" name="show-password-checkbox" onclick="showHide()" type="checkbox" value="show">
+          <label class="govuk-label govuk-checkboxes__label" for="show-password-checkbox">Show Password</label>
+        </div>
+      </div>          
+     
+      <input type="hidden" name="_csrf" value="{{ csrfToken }}"/>
+
+      {{ govukButton({
+        text: "Continue",
+        preventDoubleClick: true        
+      }) }}
+      
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">Problems signing in</h2>
+        <ul class="govuk-list">
+          <li><a href="https://gateway.prod.nomis-api.service.hmpps.dsd.io/auth/reset-password" id="forgotten-password">I have forgotten my password</a></li>
+        </ul>
+      </div>
+
+    </form>
+  </div>
+
+ </div>
+{% endblock %}
+

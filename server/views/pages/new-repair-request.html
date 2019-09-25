@@ -1,0 +1,192 @@
+{% extends "../partials/layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "button/macro.njk" import govukButton %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">  
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">New repair request</h1>
+
+    <table class="govuk-table">        
+      <caption class="govuk-table__caption new-repair-request-border">Details</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-font-size-6 new-repair-request-no-border">Name</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-font-weight-regular govuk-!-font-size-8 new-repair-request-no-border new-repair-request-ellipsis">Fareed Mohammed</th>
+          
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-font-size-6 new-repair-request-no-border">Email Address</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-font-weight-regular govuk-!-font-size-8 new-repair-request-no-border ellipsize-left">fareed.mohammeddsfsdfdsfdsfdsf.uk@gmail.com</th>
+        </tr>
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-font-size-6">Contact</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-font-weight-regular govuk-!-font-size-8 new-repair-request-ellipsis">0114 234 3344</th>              
+          </tr>
+      </thead>      
+    </table> 
+    <table class="govuk-table">        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Category</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Sub-category</th>            
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <select class="govuk-select new-repair-request-select-font-size" id="sort" name="sort">
+                <option value="select" selected>Select</option>
+                <option value="published">Cell Out of Use</option>
+                <option value="updated">General Repair</option>
+              </select>
+            </td>
+            <td class="govuk-table__cell">
+              <select class="govuk-select new-repair-request-select-font-size" id="sort" name="sort">
+                  <option value="id-1" selected>Select</option>
+                  <option value="id-2">Bio-Hazard</option>
+                  <option value="id632565">Cell Call Fault</option>
+                  <option value="id195439">Cell Door Damage</option>
+                  <option value="id446456">Cell Door Obs Glass</option>
+                  <option value="id131476">Cell Multiple Damage</option>
+                  <option value="id297497">Exposed Electrics</option>
+                  <option value="id788515">Fire Damage</option>
+                  <option value="id477527">Fire Detection Fault</option>
+                  <option value="id845548">Flooring Repair</option>
+                  <option value="id944564">Lighting Repair</option>
+                  <option value="id818580">Power Failure</option>
+                  <option value="id399598">Toilet Broken</option>
+                  <option value="id855618">Sink Broken</option>
+                  <option value="id667630">Unsafe Bed</option>
+                  <option value="id69641">Wall Damage</option>
+                  <option value="id378653">Water - No Supply</option>
+                  <option value="id399671">Water</option>
+              </select>
+            </td>            
+          </tr>
+        </tbody>
+      </table> 
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Location</caption>
+        <caption class="govuk-table__caption"><span id="changed-name-hint" class="govuk-hint">
+            You must select at least a room level location
+          </span></caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Location</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Sub-location</th>            
+          </tr>          
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell new-repair-request-no-border">
+              <select class="govuk-select new-repair-request-select-font-size" id="sort" name="sort">
+                  <option value="id-1">Select</option>
+                  <option value="id4071979">A - Wing</option>
+                  <option value="id3982020">B - Wing</option>
+                  <option value="id3742037">C - Wing</option>
+                  <option value="id6642054">D - Wing</option>
+                  <option value="id8192071">E - Wing</option>
+                  <option value="id292100">F - Wing</option>
+                  <option value="id3752137">Visits Hall</option>
+                  <option value="id592160">Workshop - 1</option>
+                  <option value="id2492193">Workshop - 2</option>
+                  <option value="id9602218">Workshop - 3</option>
+                  <option value="id8982255">Workshop - 4</option>
+                  <option value="id1662280">Workshop - 5</option>
+              </select>
+            </td>
+            <td class="govuk-table__cell new-repair-request-no-border">
+              <select class="govuk-select new-repair-request-select-font-size" id="sort" name="sort">
+                  <option value="id-1">Select</option>
+                  <option value="id4071979">Landing 1 - Cell 001</option>
+                  <option value="id7652843">Landing 1 - Cell 002</option>
+                  <option value="id7232880">Landing 1 - Cell 003</option>
+                  <option value="id3182917">Landing 1 - Cell 004</option>
+                  <option value="id8372986">Landing 1 - Cell 005</option>
+                  <option value="id3953027">Landing 1 - Cell 006</option>
+                  <option value="id1093068">Landing 1 - Cell 007</option>
+                  <option value="id5653109">Landing 1 - Cell 008</option>
+                  <option value="id6693150">Landing 1 - Cell 009</option>
+                  <option value="id6363201">Landing 1 - Cell 010</option>
+              </select>
+            </td>            
+          </tr>
+        </tbody>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header new-repair-request-no-border">Asset (optional)</th>            
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <select class="govuk-select new-repair-request-select-font-size" id="sort" name="sort">
+                      <option value="id-1">Select</option>
+                      <option value="id4071979">Bed Frame</option>
+                      <option value="id4753681">Chair</option>
+                      <option value="id3433692">Sink</option>
+                      <option value="id2193701">Shower</option>
+                      <option value="id2663714">Table</option>
+                      <option value="id6863729">Window</option>
+                  </select>
+                </td>
+                <td class="govuk-table__cell"> </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="govuk-table">
+            <caption class="govuk-table__caption">Description of issue</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Description</th>              
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table> 
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">   
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h1 class="govuk-fieldset__heading">
+                        Does this issue put prisoners or staff at risk of injury?
+                    </h1>
+                  </legend>           
+              
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="changed-name">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+      <input type="hidden" name="_csrf" value="{{ csrfToken }}"/>
+
+      <button type="submit" class="govuk-button">Continue</button>
+      <button type="submit" class="govuk-button govuk-button--secondary">Cancel</button>      
+
+    </form>
+  </div>
+
+ </div>
+{% endblock %}
+
